@@ -26,15 +26,14 @@ def main():
         screen.blit(bg_img, [-x+3200, 0])
         screen.blit(bg_img2, [-x+4800, 0])
 
+        flyK_rct.move_ip((-1, 0))
         key_lst = pg.key.get_pressed()  #キーの押下状態を取得
         if key_lst[pg.K_UP]:
             flyK_rct.move_ip((0, -1))
         elif key_lst[pg.K_DOWN]:
-            flyK_rct.move_ip((0, 1))
-        elif key_lst[pg.K_LEFT]:
-            flyK_rct.move_ip((-1, 0))
+            flyK_rct.move_ip((0, +1))
         elif key_lst[pg.K_RIGHT]:
-            flyK_rct.move_ip((1, 0))
+            flyK_rct.move_ip((+2, 0))
         screen.blit(flyK_img, flyK_rct)
         pg.display.update()
         tmr += 1        
